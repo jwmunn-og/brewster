@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,900');
+@import "font-awesome";
 
 h1, h2, h3, h4, h5, h6 {
   margin:0;
@@ -11,7 +12,7 @@ body {
   font-family: 'Merriweather', Georgia, serif;
 }
 
-h1 {
+h1, h2 {
   font-weight: 900;
 }
 
