@@ -21,6 +21,8 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 
 # Add Pagination
 gem 'will_paginate', '~> 3.1.1'
+# gem 'will_paginate-bootstrap'
+gem 'will_paginate-bootstrap4'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

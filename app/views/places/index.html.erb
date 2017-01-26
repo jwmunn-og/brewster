@@ -7,7 +7,11 @@
           <p><%= place.description %></p>
         </div>
     <% end %>
+    <nav class="d-flex justify-content-center" aria-label="Page navigation">
+      <%= will_paginate @places, :renderer => WillPaginate::ActionView::BootstrapLinkRenderer %>
+    </nav>
+    
 
-    <%= will_paginate @places %>
+    
   </div>
 </div>
