@@ -19,6 +19,9 @@ gem 'coffee-rails', '~> 4.2'
 # Add Bootsrap
 gem 'bootstrap', '~> 4.0.0.alpha6'
 
+# Add Simple Form
+gem 'simple_form'
+
 # Add Pagination
 gem 'will_paginate', '~> 3.1.1'
 # gem 'will_paginate-bootstrap'
