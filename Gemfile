@@ -60,3 +60,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Add FontAwesome icons
 gem "font-awesome-rails"
+
+gem 'devise'
