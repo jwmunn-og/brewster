@@ -47,11 +47,16 @@ h1, h2 {
   padding: 1.5em;
 }
 
-.form-inputs, .form-actions {
-  margin-bottom: 1em;
+.form-inputs, .form-actions, .booyah-box h2 {
+  margin-bottom: 1rem;
 }
 
 abbr[title] {
   color: #a94442; // From .alert-danger
   text-decoration: none;
+}
+
+
+.alert {
+  text-align: center;
 }
