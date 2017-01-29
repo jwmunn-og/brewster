@@ -47,6 +47,10 @@ h1, h2 {
   padding: 1.5em;
 }
 
+.form-inputs, .form-actions {
+  margin-bottom: 1em;
+}
+
 abbr[title] {
   color: #a94442; // From .alert-danger
   text-decoration: none;
