@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Nomster</title>
+    <title>Brewster</title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,13 +16,27 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <%= link_to 'Nomster', root_path, class: 'navbar-brand' %>
+          <%= link_to 'Brewster', root_path, class: 'navbar-brand' %>
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
               <%= link_to new_place_path, class: 'nav-link' do %>
                 <i class="fa fa-plus-circle"></i> New Place
               <% end %>
             </li>
+          </ul>
+
+          <ul class="navbar-nav">
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Sign up", new_user_registration_path, class: 'nav-link' %>
+            <% end %>
           </ul>
         </div>
       </nav>
