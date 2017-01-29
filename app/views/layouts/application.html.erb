@@ -43,10 +43,10 @@
     </div>
 
     <% if notice.present? %>
-      <p class="alert alert-info"><%= notice %></p>
+      <div class="alert alert-info"><div class="container"><%= notice %></div></div>
     <% end %>
     <% if alert.present? %>
-      <p class="alert alert-danger"><%= alert %></p>
+      <div class="alert alert-danger"><div class="container"><%= alert %></div></div>
     <% end %>
 
     <%= yield %>

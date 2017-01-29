@@ -28,8 +28,10 @@ h1, h2 {
   font-size: 1.625em; /*26px*/
 }
 
-.nav-link {
+.nav-link, label, .sans {
   font-family: sans-serif;
+}
+.nav-link {
   line-height: 2.6;
 }
 
@@ -45,3 +47,7 @@ h1, h2 {
   padding: 1.5em;
 }
 
+abbr[title] {
+  color: #a94442; // From .alert-danger
+  text-decoration: none;
+}

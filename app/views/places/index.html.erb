@@ -5,6 +5,10 @@
           <h2><%= place.name %></h2>
           <p><em><%= place.address %></em></p>
           <p><%= place.description %></p>
+
+          <% if place.user.present? %>
+            <small><%= place.user.email %></small>
+          <% end %>
         </div>
     <% end %>
     <nav class="d-flex justify-content-center" aria-label="Page navigation">
