@@ -4,6 +4,15 @@
       <h1><%= @place.name %></h1>
       <p><em><%= @place.address %></em></p>
       <p><%= @place.description %></p>
+      <% if @place.latitude.present? && @place.latitude.present? %> 
+        <script>
+        L.mapbox.accessToken = 'pk.eyJ1IjoiandtdW5uIiwiYSI6ImNpcG1yd3JpbDAwMDR0eG5tcGx2cDkwbncifQ._XE7BHs31OorfxxKaVFbig';
+        var map = L.mapbox.map('map', 'mapbox.streets').setView([<%= @place.latitude %>, <%= @place.longitude %>], 15);
+        L.marker([<%= @place.latitude %>, <%= @place.longitude %>]).addTo(map);
+        </script>
+
+        <div id='map'></div>
+      <% end %>
       <div class="float-right">
         <% if current_user && current_user == @place.user %>
           <%= link_to 'Edit Place',  edit_place_path(@place), class: 'btn btn-primary' %>
