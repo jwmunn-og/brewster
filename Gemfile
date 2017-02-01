@@ -61,4 +61,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Add FontAwesome icons
 gem "font-awesome-rails"
 
+# Profile resources
 gem 'devise'
+
+#Geocode for address
+gem 'geocoder'
+
+gem 'figaro'
