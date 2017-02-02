@@ -23,7 +23,7 @@
     </div>
     <div class="booyah-box">
       <h2>Leave a comment</h2>
-      <%= simple_form_for @comment, url: '#' do |f| %>
+      <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
         <%= f.input :message %>
         <%= f.input :rating %>
         <%= f.submit 'Add a comment', class: 'btn btn-primary' %>
