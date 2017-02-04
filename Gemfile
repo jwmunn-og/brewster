@@ -64,7 +64,10 @@ gem "font-awesome-rails"
 # Profile resources
 gem 'devise'
 
-#Geocode for address
+# Geocode for address
 gem 'geocoder'
 
 gem 'figaro'
+
+#Image Upload gem
+gem 'carrierwave', '~> 1.0'
