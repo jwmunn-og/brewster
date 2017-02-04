@@ -86,7 +86,7 @@
               </button>
             </div>
            
-            <%= simple_form_for @photo, url: '#' do |f| %>
+            <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
               <div class="modal-body">
                 <%= f.input :caption %>
               </div>
@@ -102,6 +102,16 @@
       <h2 class="float-left">Photos</h2>
       <br class="clear" />
       <div class="row">
+        <% @place.photos.each do |photo| %>
+          <div class="col-12 col-md-6">
+            <blockquote>
+              <%= photo.caption %>
+              <small><%= photo.user.email %></small>
+            </blockquote>
+          </div>
+        <% end %>
+      </div>
+    </div>
         
       </div>
     </div>
