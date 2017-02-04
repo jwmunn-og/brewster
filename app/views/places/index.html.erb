@@ -20,6 +20,13 @@
               </div>
             </div>
           <% end %>
+          <% if place.photos.present? %>
+            <div class="row">
+              <div class="col-12">
+                  <%= image_tag place.photos.last.picture, class: 'rounded' %>
+              </div>
+            </div>
+          <% end %>
         </div>
     <% end %>
     <nav class="d-flex justify-content-center" aria-label="Page navigation">

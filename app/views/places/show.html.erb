@@ -105,11 +105,9 @@
       <div class="row">
         <% @place.photos.each do |photo| %>
           <div class="col-12 col-md-6">
-            <blockquote>
-              <%= image_tag photo.picture %>
+              <%= image_tag photo.picture, class: 'rounded' %>
               <br class="clear" />
-              <%= photo.caption %>
-            </blockquote>
+              <p class="lead"><%= photo.caption %></p>
           </div>
         <% end %>
       </div>
