@@ -6,5 +6,5 @@ class Place < ApplicationRecord
   geocoded_by :address
   after_validation :geocode
   
-  validates :name, :address, :description, presence: true
+  validates :name, :address, :description, :picture, presence: true
 end

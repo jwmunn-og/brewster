@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="col-10 offset-1">
+  <div class="col-12 col-md-10 offset-md-1">
     <% @places.each do |place| %>
         <div class="booyah-box">
           <h2><%= link_to place.name, place_path(place) %></h2>
@@ -9,9 +9,13 @@
           <% if place.user.present? %>
             <small><%= place.user.email %></small>
           <% end %>
-          <% if place.comments.present? %>
+          <% if place.photos.present? && place.comments.present? %>
+            <br class="clear" />
             <div class="row">
-              <div class="col-12">
+              <div class="col-12 col-md-4">
+                  <%= image_tag place.photos.last.picture, class: 'rounded' %>
+              </div>
+              <div class="col-12 col-md-8">
                 <blockquote>
                   <strong><%= place.comments.last.humanized_rating %></strong> - 
                   <%= place.comments.last.message %>
@@ -19,13 +23,25 @@
                 </blockquote>
               </div>
             </div>
-          <% end %>
-          <% if place.photos.present? %>
-            <div class="row">
-              <div class="col-12">
-                  <%= image_tag place.photos.last.picture, class: 'rounded' %>
+          <% else %>
+            <% if place.comments.present? %>
+              <div class="row">
+                <div class="col-12">
+                  <blockquote>
+                    <strong><%= place.comments.last.humanized_rating %></strong> - 
+                    <%= place.comments.last.message %>
+                    <small><%= place.comments.last.user.email %></small>
+                  </blockquote>
+                </div>
               </div>
-            </div>
+            <% end %>
+            <% if place.photos.present? %>
+              <div class="row">
+                <div class="col-12">
+                    <%= image_tag place.photos.last.picture, class: 'rounded' %>
+                </div>
+              </div>
+            <% end %>
           <% end %>
         </div>
     <% end %>

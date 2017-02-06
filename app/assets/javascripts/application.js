@@ -16,4 +16,4 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-$('.alert').alert()
+$('.alert').alert();

@@ -69,8 +69,11 @@ abbr[title] {
 }
 
 #map { 
-  height: 300px;
-  margin-bottom: 1.5em;
+  height: 50vh;
+}
+
+#map + .container { 
+    margin-top: -15vh;
 }
 
 .clear {
@@ -79,21 +82,21 @@ abbr[title] {
 
 blockquote {
   background: #f9f9f9;
-  border-left: 10px solid #ccc;
+  border-left: 10px solid #f0ad4e;
   margin: 1.5em 10px;
   padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
+  font-style: italic;
 }
-blockquote:before {
-  color: #ccc;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
+
 blockquote p {
   display: inline;
+}
+
+blockquote strong {
+  display: block;
+  color: #f0ad4e;
+  font-size: 150%;
+  font-style: normal;
 }
 
 img {
@@ -103,33 +106,66 @@ img {
 
 figure.figure {
   position: relative;
-  -webkit-margin-before:0;
-  -webkit-margin-after: 0;
-  padding-left: 0;
-  padding-right: 0;
+ /* -webkit-margin-before:0;
+  -webkit-margin-after: 0;*/
+ /* padding-left: 0;
+  padding-right: 0;*/
+  /*margin: 0 15px;*/
 }
 
 figcaption {
-  position: absolute;
-  width: 100%;
-  font-style: italic;
-  padding-right: 15px;
-  padding-left: 15px;
+ /* position: absolute;
+  width: 100%;*/
+  /*font-style: italic;*/
+  /*margin-right: 15px;
+  margin-left: 15px;
   border-radius: 0.25rem;
   bottom: 0;
+  left: 0;
   -webkit-margin-before:0;
-  -webkit-margin-after: 0;
+  -webkit-margin-after: 0;*/
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
-  background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+  /*background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);*/ /* FF3.6-15 */
+  /*background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);*/ /* Chrome10-25,Safari5.1-6 */
+  /* background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);*/ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );*/ /* IE6-9 */
 }
 
 .figure-caption {
-  color: #fff;
+  /*color: #fff;*/
   font-size: italic;
   display: block;
-  padding: 2rem .5rem .5rem .5rem;
+  /*padding: 2rem .5rem .5rem .5rem;*/
+  padding: .5rem 0;
   
 }
+
+label.file {
+  display: block;
+}
+
+input.file {
+  line-height: 2.1;
+  @extend .text-muted;
+}
+
+input.file::-webkit-file-upload-button {
+  visibility: hidden;
+}
+input.file::before {
+  content: 'Upload';
+  display: inline-block;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  @extend .btn;
+  @extend .btn-outline-primary;
+}
+/*input.file:hover::before {
+  border-color: black;
+}*/
+/*input.file:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}*/
+
