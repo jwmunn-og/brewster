@@ -3,8 +3,9 @@
     L.mapbox.accessToken = 'pk.eyJ1IjoiandtdW5uIiwiYSI6ImNpcG1yd3JpbDAwMDR0eG5tcGx2cDkwbncifQ._XE7BHs31OorfxxKaVFbig';
     var map = L.mapbox.map('map', 'mapbox.streets').setView([<%= @place.latitude %>, <%= @place.longitude %>], 15);
     L.marker([<%= @place.latitude %>, <%= @place.longitude %>]).addTo(map);
+    // disable map zoom when using scroll
+     map.scrollWheelZoom.disable();
   </script>
-
   <div id='map'></div>
 <% end %>
 <div class="container">
