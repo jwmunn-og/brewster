@@ -4,7 +4,6 @@ class PhotosController < ApplicationController
   def create
     @place = Place.find(params[:place_id])
     @place.photos.create(photo_params)
-    # render 'places/show', status: :unprocessable_entity
     redirect_to place_path(@place)
   end
 
