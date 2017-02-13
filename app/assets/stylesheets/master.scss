@@ -85,6 +85,7 @@ abbr[title] {
 
 #map + .container, .carousel + .container { 
     margin-top: -15vh;
+    z-index: 1000;
 }
 
 .clear {
@@ -212,11 +213,15 @@ input.file::before {
   box-shadow: 1px 1px 2px 0 #d0d0d0;
 }
 
-.nav-link, label, .sans {
+.nav-link, label, .sans, button, input, optgroup, select, textarea, .btn, .nav-link {
     font-family: 'Merriweather Sans', Helvetica Neue, Helvetica, sans-serif;
     font-weight: 300;
 }
 
 .profile-img {
   margin-bottom: .5em
+}
+
+.pagination {
+  font-family: 'Merriweather Sans', sans-serif;
 }
