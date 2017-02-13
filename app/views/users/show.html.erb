@@ -14,5 +14,25 @@
           </div>
         </div>
       </div>
+
+      <div class="booyah-box">
+        <div class="row">
+          <h2 class="text-center col-12">My Comments</h2>
+        </div>
+        <br />
+        <div class="row">
+          <% @user.comments.each do |comment| %>
+            <div class="col-12 col-md-6">
+              <h3><%= link_to comment.place.name, place_path(comment.place) %></h3>
+              <blockquote>
+                <strong><%= comment.humanized_rating %></strong> - 
+                <%= comment.message %>
+                <small>- <%= comment.user.email %></small>
+              </blockquote>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
   </div>
 </div>
