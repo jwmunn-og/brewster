@@ -4,26 +4,21 @@
         <div class="booyah-box">
           <div class="row">
             <div class="col-12">
-              <%= image_tag 'user.png' %>
+              <%= image_tag 'user.png', class: 'mx-auto d-block profile-img' %>
             </div>
           </div>
           <div class="row">
 
-            <div class="col-12">
-              <h4>Member since: <%= @user.created_at.strftime("%B %d, %Y") %></h4>
-              <h5><%= @user.comments.count %> total comments</h5>
-              <h5><%= @user.comments.where(rating: '5_stars').count %> total 5 star reviews</h5>
+            <div class="col-12 text-center">
+              <h6><strong><%= @user.email %></strong></h6>
+              <h6>Member since:<br /><strong><%= @user.created_at.strftime("%B %d, %Y") %></strong></h6>
+              <h6><strong><%= @user.comments.count %></strong> total comments</h6>
+              <h6><strong><%= @user.comments.where(rating: '5_stars').count %></strong> total 5 star reviews</h6>
             </div>
           </div>
         </div>
     </div>
     <div class="col-12 col-md-9">
-        <div class="row booyah-box">
-          <div class="col-12">
-            <h2><%= @user.email %>&rsquo;s Profile</h2>
-            <br /><br />
-          </div>
-        </div>
           <div class="row booyah-box">
             <h2 class="text-center col-12">My Comments</h2>
             <br class="clear" />
