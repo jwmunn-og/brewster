@@ -34,19 +34,22 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  # Gmail
-  config.action_mailer.delivery_method = :smtp
+  # Gmail Test Send Setup
+  # config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "example.com",
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: ENV['GMAIL_ADDRESS'],
-    password: ENV['GMAIL_PASSWORD']
-  }
+  # config.action_mailer.smtp_settings = {
+  #   address: "smtp.gmail.com",
+  #   port: 587,
+  #   domain: "example.com",
+  #   authentication: "plain",
+  #   enable_starttls_auto: true,
+  #   user_name: ENV['GMAIL_ADDRESS'],
+  #   password: ENV['GMAIL_PASSWORD']
+  # }
 
+  # Logs emails to console
+  config.action_mailer.delivery_method = :test
+  
   config.action_mailer.default_url_options = {host: 'localhost:3030'}
 
   # Print deprecation notices to the Rails logger.
