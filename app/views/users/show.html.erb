@@ -1,38 +1,61 @@
 <div class="container">
-  <div class="col-12 col-md-10 offset-md-1">
-      <div class="booyah-box">
-        <div class="row">
-          <div class="col-3">
-            <%= image_tag 'user.png' %>
+  <div class="row">
+    <div class="col-12 col-md-3">
+        <div class="booyah-box">
+          <div class="row">
+            <div class="col-12">
+              <%= image_tag 'user.png' %>
+            </div>
           </div>
+          <div class="row">
 
-          <div class="col-9">
-            <h2><%= @user.email %></h2>
-            <h3>Member since: <%= @user.created_at.strftime("%B %d, %Y") %></h3>
-            <h4><%= @user.comments.count %> total comments</h4>
-            <h4><%= @user.comments.where(rating: '5_stars').count %> total 5 star reviews</h4>
+            <div class="col-12">
+              <h4>Member since: <%= @user.created_at.strftime("%B %d, %Y") %></h4>
+              <h5><%= @user.comments.count %> total comments</h5>
+              <h5><%= @user.comments.where(rating: '5_stars').count %> total 5 star reviews</h5>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="booyah-box">
-        <div class="row">
-          <h2 class="text-center col-12">My Comments</h2>
+    </div>
+    <div class="col-12 col-md-9">
+        <div class="row booyah-box">
+          <div class="col-12">
+            <h2><%= @user.email %>&rsquo;s Profile</h2>
+            <br /><br />
+          </div>
         </div>
-        <br />
-        <div class="row">
-          <% @user.comments.each do |comment| %>
+          <div class="row booyah-box">
+            <h2 class="text-center col-12">My Comments</h2>
+            <br class="clear" />
+            <% @user.comments.each do |comment| %>
+              <div class="col-12 col-md-6">
+                <h3><%= link_to comment.place.name, place_path(comment.place) %></h3>
+                <blockquote>
+                  <strong><%= comment.humanized_rating %></strong> - 
+                  <%= comment.message %>
+                  <small>- <%= comment.user.email %></small>
+                </blockquote>
+              </div>
+            <% end %>
+          </div>
+
+        <div class="row booyah-box">
+            <h2 class="text-center col-12">My Places</h2>
+            <br class="clear" />
+            <% @user.places.each do |place| %>
             <div class="col-12 col-md-6">
-              <h3><%= link_to comment.place.name, place_path(comment.place) %></h3>
-              <blockquote>
-                <strong><%= comment.humanized_rating %></strong> - 
-                <%= comment.message %>
-                <small>- <%= comment.user.email %></small>
-              </blockquote>
+              <h2><%= link_to place.name, place_path(place) %></h2>
+              <p><em><%= place.address %></em></p>
+              <p><%= place.description %></p>                
+              <% if place.photos.present? %>
+                <div class="row">
+                  <div class="col-12">
+                      <%= image_tag place.photos.last.picture, class: 'rounded' %>
+                  </div>
+                </div>
+              <% end %>
             </div>
           <% end %>
-        </div>
-      </div>
-
+    </div>
   </div>
 </div>
