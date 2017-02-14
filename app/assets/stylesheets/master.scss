@@ -307,3 +307,7 @@ input.file::before {
     bottom: 5vh;
   }
 }
+
+.leaflet-control-attribution, .mapbox-logo {
+  display: none;
+}
