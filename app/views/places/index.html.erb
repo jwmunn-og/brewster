@@ -5,15 +5,13 @@
   </ol>
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
-      <%= image_tag 'slider1.jpg', class: 'img-fluid' %>
       <div class="carousel-caption">
-        Find the breweries in Seattle.
+        Find breweries in&nbsp;Seattle.
       </div>
     </div>
     <div class="carousel-item">
-      <%= image_tag 'slider2.jpg', class: 'img-fluid' %>
       <div class="carousel-caption">
-        Beers of every type.
+        Taste the Pacific North West
       </div>
     </div>
   </div>
@@ -31,54 +29,76 @@
   <div class="col-12 col-md-10 offset-md-1">
     <% @places.each do |place| %>
         <div class="booyah-box">
-          <h2><%= link_to place.name, place_path(place) %></h2>
-          <p><em><%= place.address %></em></p>
-          <p><%= place.description %></p>
-
-          <% if place.user.present? %>
-            <small><%= place.user.email %></small>
-          <% end %>
           <% if place.photos.present? && place.comments.present? %>
-            <br class="clear" />
             <div class="row">
-              <div class="col-12 col-md-4">
-                  <%= image_tag place.photos.last.picture, class: 'rounded' %>
-              </div>
-              <div class="col-12 col-md-8">
+              <h2 class="col-12"><%= link_to place.name, place_path(place) %></h2>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <p><em><%= place.address %></em></p>
+                <p><%= place.description %></p>
+
+                <% if place.user.present? %>
+                  <small><%= place.user.email %></small>
+                <% end %>
                 <blockquote>
-                  <strong><%= place.comments.last.humanized_rating %></strong> - 
-                  <%= place.comments.last.message %>
+                  <strong><%= place.comments.last.humanized_rating %></strong>
+                  <p class="lead"><%= place.comments.last.message %></p>
                   <small><%= place.comments.last.user.email %></small>
                 </blockquote>
               </div>
+              <div class="col-12 col-md-6">
+                <%= image_tag place.photos.last.picture, class: 'rounded' %>
+              </div>
             </div>
-          <% else %>
-            <% if place.comments.present? %>
+          <% elsif place.comments.present? %>
               <div class="row">
-                <div class="col-12">
-                  <blockquote>
-                    <strong><%= place.comments.last.humanized_rating %></strong> - 
-                    <%= place.comments.last.message %>
+                 <div class="col-12">
+                  <h2><%= link_to place.name, place_path(place) %></h2>
+                  <p><em><%= place.address %></em></p>
+                  <p><%= place.description %></p>
+                  <% if place.user.present? %>
+                    <small><%= place.user.email %></small>
+                  <% end %>
+                  <blockquote class="bottom-collapse">
+                    <strong><%= place.comments.last.humanized_rating %></strong>
+                    <p class="lead"><%= place.comments.last.message %></p>
                     <small><%= place.comments.last.user.email %></small>
                   </blockquote>
                 </div>
               </div>
-            <% end %>
-            <% if place.photos.present? %>
+            <% elsif place.photos.present? %>
               <div class="row">
-                <div class="col-12">
-                    <%= image_tag place.photos.last.picture, class: 'rounded' %>
+                <h2 class="col-12"><%= link_to place.name, place_path(place) %></h2>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-6">
+                  <p><em><%= place.address %></em></p>
+                  <p><%= place.description %></p>
+                  <% if place.user.present? %>
+                    <small><%= place.user.email %></small>
+                  <% end %>
+                </div>
+                <div class="col-12 col-md-6">
+                  <%= image_tag place.photos.last.picture, class: 'rounded' %>
                 </div>
               </div>
-            <% end %>
+            <% else %>
+              <div class="row">
+                <div class="col-12">
+                  <h2><%= link_to place.name, place_path(place) %></h2>
+                  <p><em><%= place.address %></em></p>
+                  <p><%= place.description %></p>
+                  <% if place.user.present? %>
+                    <small><%= place.user.email %></small>
+                  <% end %>
+                </div>
+              </div>
           <% end %>
         </div>
     <% end %>
     <nav class="d-flex justify-content-center" aria-label="Page navigation">
       <%= will_paginate @places, :renderer => WillPaginate::ActionView::BootstrapLinkRenderer %>
     </nav>
-    
-
-    
   </div>
 </div>
