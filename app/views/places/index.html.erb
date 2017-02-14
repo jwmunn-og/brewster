@@ -31,23 +31,24 @@
         <div class="booyah-box">
           <% if place.photos.present? && place.comments.present? %>
             <div class="row">
-              <h2 class="col-12"><%= link_to place.name, place_path(place) %></h2>
-            </div>
-            <div class="row">
-              <div class="col-12 col-md-6">
+              <div class="col-12">
+                <h2><%= link_to place.name, place_path(place) %></h2>
                 <p><em><%= place.address %></em></p>
                 <p><%= place.description %></p>
-
                 <% if place.user.present? %>
                   <small><%= place.user.email %></small>
                 <% end %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-8">
                 <blockquote>
                   <strong><%= place.comments.last.humanized_rating %></strong>
                   <p class="lead"><%= place.comments.last.message %></p>
                   <small><%= place.comments.last.user.email %></small>
                 </blockquote>
               </div>
-              <div class="col-12 col-md-6">
+              <div class="col-12 col-md-4">
                 <%= image_tag place.photos.last.picture, class: 'rounded' %>
               </div>
             </div>
@@ -72,14 +73,14 @@
                 <h2 class="col-12"><%= link_to place.name, place_path(place) %></h2>
               </div>
               <div class="row">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-8">
                   <p><em><%= place.address %></em></p>
                   <p><%= place.description %></p>
                   <% if place.user.present? %>
                     <small><%= place.user.email %></small>
                   <% end %>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-8">
                   <%= image_tag place.photos.last.picture, class: 'rounded' %>
                 </div>
               </div>
