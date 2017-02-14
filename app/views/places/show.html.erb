@@ -106,9 +106,9 @@
         <% @place.comments.each do |comment| %>
           <div class="col-12 col-md-6">
             <blockquote>
-              <strong><%= comment.humanized_rating %></strong> - 
-              <%= comment.message %>
-              <small>- <%= comment.user.email %></small>
+              <strong><%= comment.humanized_rating %></strong>
+              <p class="lead"><%= comment.message %></p>
+              <small><%= comment.user.email %></small>
             </blockquote>
           </div>
         <% end %>
