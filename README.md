@@ -4,16 +4,6 @@ A Yelp style app for reviewing breweries around Seattle. Users can add breweries
 
 *Technical description: A Yelp clone that integrates with the Mapbox API and includes features like user comments, star ratings, image uploading, and user authentication. Deployed through Heroku.*
 
-## Screenshots
-![Brewster](https://raw.githubusercontent.com/jwmunn/nomster/master/app/assets/images/brewster-index.png "Brewster Seattle Homepage")
-![Brewster Place](https://raw.githubusercontent.com/jwmunn/nomster/master/app/assets/images/brewster-show.png "Brewster Brewery Show Page")
-
-## Demo
-You can see a running version of the application at
-[https://brewster-seattle.herokuapp.com/][demo].
-
-[demo]: https://brewster-seattle.herokuapp.com/
-
 ## Features
 
 * Amazon Web Services (S3) for photo storage.
@@ -28,15 +18,12 @@ You can see a running version of the application at
 
 * Custom [will_paginate] integration for index pagination.
 
-## Installation
-This application requires [Postgres](http://www.postgresql.org/) to be installed
+## Demo
+You can see a running version of the application at
+[https://brewster-seattle.herokuapp.com/][demo].
 
-    git clone https://github.com/jwmunn/nomster.git
-    cd nomster
-    bundle install
+[demo]: https://brewster-seattle.herokuapp.com/
 
-    bundle exec rake db:create
-    bundle exec rake db:migrate
-
-## Usage
-    rails server
+## Screenshots
+![Brewster](https://raw.githubusercontent.com/jwmunn/nomster/master/app/assets/images/brewster-index.png "Brewster Seattle Homepage")
+![Brewster Place](https://raw.githubusercontent.com/jwmunn/nomster/master/app/assets/images/brewster-show.png "Brewster Brewery Show Page")
