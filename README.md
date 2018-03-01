@@ -1,24 +1,42 @@
-# README
+# Brewster
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Yelp style app for reviewing breweries around Seattle. Users can add breweries or rate, comment, and add photos to existing breweries.
 
-Things you may want to cover:
+*Technical description: A Yelp clone that integrates with the Mapbox API and includes features like user comments, star ratings, image uploading, and user authentication. Deployed through Heroku.*
 
-* Ruby version
+## Screenshots
+![Brewster](https://raw.githubusercontent.com/jwmunn/nomster/master/app/assets/images/brewster-index.png "Brewster Seattle Homepage")
+![Brewster Place](https://raw.githubusercontent.com/jwmunn/nomster/master/app/assets/images/brewster-show.png "Brewster Brewery Show Page")
 
-* System dependencies
+## Demo
+You can see a running version of the application at
+[https://brewster-seattle.herokuapp.com/][demo].
 
-* Configuration
+[demo]: https://brewster-seattle.herokuapp.com/
 
-* Database creation
+## Features
 
-* Database initialization
+* Amazon Web Services (S3) for photo storage.
 
-* How to run the test suite
+* [Zurb Foundation](https://github.com/zurb/foundation-rails) for CSS and components.
 
-* Services (job queues, cache servers, search engines, etc.)
+* PostgreSQL for database queries involving users, places, photos, comments, and ratings.
 
-* Deployment instructions
+* [Devise](https://github.com/plataformatec/devise) for flexible user authentication.
 
-* ...
+* [Mapbox API](https://www.mapbox.com/api-documentation/) for displaying map locations.
+
+* Custom [will_paginate] integration for index pagination.
+
+## Installation
+This application requires [Postgres](http://www.postgresql.org/) to be installed
+
+    git clone https://github.com/jwmunn/nomster.git
+    cd nomster
+    bundle install
+
+    bundle exec rake db:create
+    bundle exec rake db:migrate
+
+## Usage
+    rails server
