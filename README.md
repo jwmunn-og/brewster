@@ -25,5 +25,5 @@ You can see a running version of the application at
 [demo]: https://brewster-seattle.herokuapp.com/
 
 ## Screenshots
-![Brewster](https://raw.githubusercontent.com/jwmunn/nomster/master/app/assets/images/brewster-index.png "Brewster Seattle Homepage")
-![Brewster Place](https://raw.githubusercontent.com/jwmunn/nomster/master/app/assets/images/brewster-show.png "Brewster Brewery Show Page")
+![Brewster](https://raw.githubusercontent.com/jwmunn/brewster/master/app/assets/images/brewster-index.png "Brewster Seattle Homepage")
+![Brewster Place](https://raw.githubusercontent.com/jwmunn/brewster/master/app/assets/images/brewster-show.png "Brewster Brewery Show Page")
