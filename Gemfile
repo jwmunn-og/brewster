@@ -74,5 +74,3 @@ gem 'carrierwave', '~> 1.0'
 
 gem "fog"
 
-# Security Vulnerability patch
-gem 'nokogiri', '~> 1.8.1'
