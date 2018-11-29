@@ -17,7 +17,7 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 # Add Bootsrap
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap', '>= 4.1.2'
 
 # Add Simple Form
 gem 'simple_form'
